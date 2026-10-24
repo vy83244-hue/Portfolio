@@ -1,0 +1,278 @@
+
+/* Windowserver Arcade */
+.ws-arcade {
+  --ws-bg: #081322;
+  --ws-card: #101f32;
+  --ws-border: #243c55;
+  --ws-text: #eaf4ff;
+  --ws-muted: #9bb0c7;
+  --ws-accent: #55e6d0;
+  color: var(--ws-text);
+  padding: 48px 0;
+  font-family: inherit;
+}
+
+.ws-arcade * { box-sizing: border-box; }
+
+.ws-arcade-heading {
+  text-align: center;
+  margin: 0 auto 26px;
+  padding: 0 16px;
+}
+
+.ws-arcade-eyebrow {
+  color: var(--ws-accent);
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ws-arcade-heading h2 {
+  font-size: clamp(28px, 5vw, 42px);
+  margin: 8px 0;
+  font-weight: 800;
+}
+
+.ws-arcade-heading h2 span { color: var(--ws-accent); }
+
+.ws-arcade-heading p,
+.ws-game-header p {
+  color: var(--ws-muted);
+  margin: 6px 0;
+  line-height: 1.6;
+}
+
+.ws-arcade-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 auto 22px;
+  max-width: 1100px;
+  padding: 0 16px;
+}
+
+.ws-arcade-toolbar input,
+.ws-arcade-toolbar select {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 12px 14px;
+  color: var(--ws-text);
+  background: var(--ws-card);
+  border: 1px solid var(--ws-border);
+  border-radius: 10px;
+  font: inherit;
+}
+
+.ws-game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.ws-game-card {
+  min-width: 0;
+  border: 1px solid var(--ws-border);
+  border-radius: 16px;
+  padding: 18px;
+  background: linear-gradient(145deg, #12243a, #0b1727);
+  transition: transform .2s, border-color .2s, box-shadow .2s;
+}
+
+.ws-game-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--ws-accent);
+  box-shadow: 0 10px 32px #0003;
+}
+
+.ws-game-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  font-size: 30px;
+  border-radius: 14px;
+  background: #1b354b;
+  margin-bottom: 12px;
+}
+
+.ws-game-card h3 { margin: 0 0 8px; font-size: 18px; }
+.ws-game-card p { color: var(--ws-muted); line-height: 1.5; min-height: 44px; margin: 0 0 16px; font-size: 14px; }
+
+.ws-game-btn,
+.ws-control,
+.ws-game-close {
+  cursor: pointer;
+  font: inherit;
+  border: 1px solid #2d596c;
+  border-radius: 9px;
+  color: var(--ws-text);
+  background: #173247;
+  padding: 10px 14px;
+}
+
+.ws-game-btn {
+  width: 100%;
+  color: #071522;
+  background: var(--ws-accent);
+  border-color: var(--ws-accent);
+  font-weight: 800;
+}
+
+.ws-game-btn:hover { filter: brightness(1.08); }
+
+.ws-game-modal[hidden] { display: none !important; }
+
+.ws-game-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 10px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #020814df;
+  backdrop-filter: blur(8px);
+  color: var(--ws-text);
+}
+
+.ws-game-panel {
+  width: min(100%, 720px);
+  max-height: calc(100vh - 20px);
+  max-height: calc(100dvh - 20px);
+  margin: auto 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: clamp(12px, 3vw, 24px);
+  border: 1px solid var(--ws-border);
+  border-radius: 16px;
+  background: #091728;
+  box-shadow: 0 24px 80px #0009;
+}
+
+.ws-game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ws-game-header h2 { font-size: clamp(20px, 4vw, 28px); margin: 0; }
+.ws-game-close { flex: 0 0 auto; font-size: 20px; padding: 5px 11px; }
+.ws-game-content { min-width: 0; text-align: center; }
+.ws-game-content button { touch-action: manipulation; }
+.ws-game-content button:focus-visible,
+.ws-game-close:focus-visible { outline: 2px solid var(--ws-accent); outline-offset: 3px; }
+
+.ws-game-status { color: var(--ws-accent); margin: 8px 0 14px; font-weight: 700; }
+.ws-game-actions { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin: 12px 0; }
+.ws-game-actions button { min-width: 90px; }
+.ws-game-board { display: grid; gap: 6px; justify-content: center; margin: 12px auto; }
+.ws-game-cell {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 44px;
+  padding: 4px;
+  color: var(--ws-text);
+  background: #132a40;
+  border: 1px solid #29475f;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+.ws-game-cell:disabled { cursor: default; opacity: .9; }
+
+.ws-game-canvas {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin: 10px auto;
+  border: 1px solid #29475f;
+  border-radius: 10px;
+  background: #04101e;
+  touch-action: none;
+}
+
+.ws-game-input {
+  width: 100%;
+  max-width: 440px;
+  padding: 12px;
+  margin: 8px 0;
+  color: var(--ws-text);
+  background: #102338;
+  border: 1px solid #36536a;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.ws-game-tile {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #17344b;
+  font-size: clamp(15px, 4vw, 24px);
+  font-weight: 800;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ws-game-pad {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 110px));
+  gap: 10px;
+  justify-content: center;
+  margin: 14px auto;
+}
+
+.ws-game-pad button {
+  height: 90px;
+  border: 2px solid #ffffff30;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.ws-game-pad button:active { filter: brightness(1.5); }
+
+.ws-game-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  max-width: 430px;
+  margin: 12px auto;
+}
+
+.ws-game-controls button {
+  min-width: 0;
+  padding: 12px 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+@media (max-width: 850px) {
+  .ws-game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 520px) {
+  .ws-arcade { padding: 30px 0; }
+  .ws-game-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ws-game-card { padding: 15px; }
+  .ws-game-card p { min-height: 0; }
+  .ws-game-modal { padding: 5px; }
+  .ws-game-panel {
+    max-height: calc(100vh - 10px);
+    max-height: calc(100dvh - 10px);
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .ws-game-cell { min-height: 38px; }
+}
