@@ -386,6 +386,50 @@
   </section>
 </main>
 
+
+<!-- Windowserver Arcade -->
+<section id="ws-arcade" class="ws-arcade">
+  <div class="ws-arcade-heading">
+    <span class="ws-arcade-eyebrow">TAKE A BREAK</span>
+    <h2>Windowserver <span>Arcade</span></h2>
+    <p>15 mini-games. One place to play. Choose your challenge.</p>
+  </div>
+
+  <div class="ws-arcade-toolbar">
+    <input id="ws-game-search" type="search"
+           placeholder="Search games..." aria-label="Search games">
+    <select id="ws-game-category" aria-label="Filter games">
+      <option value="all">All games</option>
+      <option value="classic">Classic arcade</option>
+      <option value="puzzle">Puzzle & memory</option>
+      <option value="challenge">Quick challenges</option>
+      <option value="cyber">Cybersecurity</option>
+    </select>
+  </div>
+
+  <div id="ws-game-grid" class="ws-game-grid"></div>
+</section>
+
+<!-- Game window -->
+<div id="ws-game-modal" class="ws-game-modal" hidden
+     role="dialog" aria-modal="true" aria-labelledby="ws-modal-title">
+  <div class="ws-game-panel">
+    <div class="ws-game-header">
+      <div>
+        <h2 id="ws-modal-title">Game</h2>
+        <p id="ws-modal-subtitle">Ready to play?</p>
+      </div>
+      <button id="ws-game-close" class="ws-game-close"
+              type="button" aria-label="Close game">✕</button>
+    </div>
+    <div id="ws-game-content" class="ws-game-content"></div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="css/games.css">
+<script src="js/games.js" defer></script>
+
+	
 <footer>
   <div class="container footer-inner">
     <a class="brand" href="#home"><span class="brand-mark">VY<span>.</span></span> Vijay Kumar Yadav</a>
